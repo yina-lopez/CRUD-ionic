@@ -1,0 +1,59 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title><b>
+      Inicio
+    </b>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!--<ion-button routerLink="/contacto">
+      Ir a Contacto
+  </ion-button>
+-->
+  <ion-item>
+      <ion-label><i>Nombre:</i></ion-label>
+      <ion-input [(ngModel)]="nombre"></ion-input>
+  </ion-item>
+
+  <ion-item>
+      <ion-label><i>Apellido:</i></ion-label>
+      <ion-input [(ngModel)]="apellido"></ion-input>
+  </ion-item>
+
+  <ion-item>
+      <ion-label><i>Celular:</i></ion-label>
+      <ion-input [(ngModel)]="celular"></ion-input>
+  </ion-item>
+
+  <ion-item>
+      <ion-label><i>Email:</i></ion-label>
+      <ion-input [(ngModel)]="email"></ion-input>
+  </ion-item>
+
+  <ion-button size="lg" color="primary" (click)="guardarDatos()"><b>
+      Guardar
+      </b>
+  </ion-button>
+
+  <ion-list>
+    <ion-item *ngFor="let usuario of usuarios" ></ion-item>
+      
+        
+      <ion-item *ngFor="let usuario of usuarios; let i = index" >
+          <ion-label>{{ usuario.nombre }}</ion-label>
+          <ion-label>{{ usuario.apellido }}</ion-label>
+          <ion-label>{{ usuario.celular }}</ion-label>
+          <ion-label>{{ usuario.email }}</ion-label>
+         
+          <ion-button color="success" clear (click)="editar(usuario)">
+            <ion-icon name="create-outline"></ion-icon>
+          </ion-button>
+          <ion-button size="small" color="danger" (click)="borrar(usuario)">
+              Eliminar
+          </ion-button>
+      </ion-item>
+  </ion-list>
+
+</ion-content>
