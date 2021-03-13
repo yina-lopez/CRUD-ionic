@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title><b>Operaciones</b></ion-title>
+  </ion-toolbar>
+ 
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Numero 1</ion-label>
+    <ion-input  [(ngModel)]="num1" placeholder="Escriba un numero"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Operacion</ion-label>
+    <ion-input  [(ngModel)]="operador" placeholder="Escriba signo de la operacion"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Numero 2</ion-label>
+    <ion-input  [(ngModel)]="num2" placeholder="Escriba un numero"></ion-input>
+  </ion-item>
+
+  <ion-button size="lg" color="primary" (click)="calcular()"><b>
+    Calcular
+    </b>
+</ion-button>
+</ion-content>
