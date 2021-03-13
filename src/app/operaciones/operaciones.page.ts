@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController, AlertController } from '@ionic/angular'
 
 @Component({
   selector: 'app-operaciones',
@@ -7,8 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OperacionesPage implements OnInit {
 
-  constructor() { }
+  numero1 = null
+  operacion = null
+  numero2 = null
+  resultado = null
+  constructor(public alertController: AlertController) { }
 
+  calcular(){
+    if ( this.operacion == "+"){
+      this.resultado = parseInt(this.numero1) + parseInt(this.numero2)
+    }
+    if ( this.operacion == "-"){
+      this.resultado = parseInt(this.numero1) - parseInt(this.numero2)
+    }
+    if ( this.operacion == "*"){
+      this.resultado = parseInt(this.numero1) * parseInt(this.numero2)
+    }
+    if ( this.operacion == "/"){
+      this.resultado = parseInt(this.numero1) / parseInt(this.numero2)
+    }
+  }
   ngOnInit() {
   }
 
