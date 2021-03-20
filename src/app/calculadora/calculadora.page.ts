@@ -11,7 +11,9 @@ export class CalculadoraPage implements OnInit {
 
   constructor(public alertController: AlertController) { }
 
- 
+    function numero1{}
+      
+      function numero2{}
   ngOnInit() {
   }
 
